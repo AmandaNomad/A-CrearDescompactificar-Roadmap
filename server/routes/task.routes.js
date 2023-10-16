@@ -5,11 +5,24 @@ const router = Router();
 const db = new DatabaseManagment();
 
 router.get("/", (req, res) => {
-  res.send("Hello World! desde task routes");
+  res.send("Hello world desde task routes");
 });
 
 //obtiene todos los usuarios
 router.get("/api/usuarios", db.getUsers); 
+/*obtiene un usuario buscando por id
+ requiere un json --> {"id" : 1}*/
+ router.get("/api/user/:id", db.getUserById); 
+//crea  usuarios
+router.post("/api/crearUsuario", db.createUser);
+//elimina usuarios por id los usuarios
+router.delete("/api/borrarUsuario/:id", db.deleteUser);
+//actualiza  los usuarios
+router.put("/api/actualizarUsuario", db.updateUser);
+
+router.post("/api/login", db.searchUserLogin);
+
+
 
 //obtiene todas las materias
 router.get("/api/materias", db.getMaterias); 
@@ -20,9 +33,6 @@ router.get("/api/profesores", db.getProfesores);
 // obtiene la fecha actual
 router.get("/api/now", db.getNow); 
 
-/*obtiene un usuario buscando por id
- requiere un json --> {"id" : 1}*/
-router.get("/api/user", db.getUserById); 
 
 //obtiene el roadmap de un usuario buscando por id , requiere un json --> {"userId" : 1}
 router.get("/api/roadmap", db.getRoadmapUserById);
@@ -32,7 +42,7 @@ busca un usuario existente con su email y password , requiere un json -->
 {"email" :"usuario1@alumnos.udg.mx","password" : "pa$$wd1"}
 retornara su id 
  */
-router.get("/api/login", db.searchUser);
+/*router.get("/api/login", db.searchUser);*/
 
 
 /*registrara un usuario con email y password , requiere un json -->

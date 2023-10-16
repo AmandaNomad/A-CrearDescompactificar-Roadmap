@@ -1,5 +1,6 @@
 -- creando una instancia de Postgresql
 ./initdb -D data -U postgres -A md5 -W
+--data lo remplace por roadmap en mi caso, ya tenia tenia el directorio data.
 
 --Ejecutando el servidor PostgreSQLUna vez creada la instancia data utilizar la utilería--
 --pg_ctl.exe para levantar el servidor:
