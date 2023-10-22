@@ -33,7 +33,7 @@ const Login = ({ handleChange }) => {
           .then((response) => {
             if (response.status === 200) { 
               // Inicio de sesión exitoso, redirige al usuario a la página principal
-              window.location.reload();
+              window.location.href= 'http://localhost:3001/indexPagina.html';
             } else {
                 alert("fallido")
               // Inicio de sesión fallido, muestra un mensaje de error en la interfaz de usuario

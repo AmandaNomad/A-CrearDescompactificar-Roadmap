@@ -18,7 +18,7 @@ router.post("/api/crearUsuario", db.createUser);
 //elimina usuarios por id los usuarios
 router.delete("/api/borrarUsuario/:id", db.deleteUser);
 //actualiza  los usuarios
-router.put("/api/actualizarUsuario", db.updateUser);
+router.put("/api/actualizarUsuario/:id", db.updateUser);
 
 router.post("/api/login", db.searchUserLogin);
 

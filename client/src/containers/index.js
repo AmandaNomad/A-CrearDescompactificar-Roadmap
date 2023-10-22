@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Login from "../components/login";
 import SignUp from "../components/signup"
-import PageUser from "../components/pageUser";
 
 const SignInOutContainer = () => {
     const [value, setValue] = useState(0);
@@ -47,7 +46,6 @@ const SignInOutContainer = () => {
             >
                 <Tab label="Iniciar Sesion" />
                 <Tab label="Registrarse" />
-                <Tab label="Pagina de Usuario"/>
             </Tabs>
             <CustomTabPanel value={value} index={0}>
                 <Login handleChange={handleChange} />
@@ -55,9 +53,7 @@ const SignInOutContainer = () => {
             <CustomTabPanel value={value} index={1}>
                 <SignUp  />
             </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-                <PageUser />
-            </CustomTabPanel>
+            
         </Paper>
     )
 

@@ -172,11 +172,17 @@ class DatabaseManagment {
 
   updateUser = async (req, res) => {
     try {
-      const { id, email, passwd, roadmap, creditosAct } = req.body;
+       // extraeel ID de req.params
+    const { id } = req.params;
+      const {email, passwd, roadmap, creditosAct } = req.body;
+      console.log("ID received:", id);
 
       const query = "UPDATE roadmapp.usuarios SET email = $1, passwd = $2, roadmap = $3, creditosAct = $4 WHERE id = $5";
       const values = [email, passwd, roadmap, creditosAct, id];
       const result = await this.pool.query(query, values);
+      
+    console.log("rowCount:", result.rowCount);
+    console.log("rows:", result.rows);
       if (result.rowCount === 0) {
         return res.status(404).json({ message: "User not found" });
       }
